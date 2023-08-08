@@ -1,3 +1,9 @@
+firmware-imx (5.0) stable; urgency=medium
+
+  * Freescale update
+
+ -- Josua Mayer <josua@solid-run.com>  Thu, 13 Aug 2015 21:11:45 +0800
+
 firmware-imx (2) stable; urgency=low
 
   * update to 3.14.28-1.0.0

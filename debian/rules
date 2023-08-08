@@ -12,8 +12,8 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-3.14.28-1.0.0
-MD5=6e700f3d3a6482db08d5aabee7751630
+NAME=firmware-imx-5.0
+MD5=543210d17971f61c7c1829d2c160dc4e
 
 DESTDIR=$(CURDIR)/debian/tmp
 

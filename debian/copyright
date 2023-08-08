@@ -68,6 +68,6 @@ License: MIT
 Files: firmware-imx-*/*
 Copyright: Freescale and others
 License: LA_OPT_FSL_OPEN_3RD_PARTY_IP
- FREESCALE SEMICONDUCTOR SOFTWARE LICENSE AGREEMENT v6 February 2015
+ v8 June 2015
  .
- See EULA.txt for the full text!
+ See /usr/share/doc/firmware-imx6/COPYING.gz for the full text!
