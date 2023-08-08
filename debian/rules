@@ -12,8 +12,8 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-7.6
-MD5=3f6a00c3dfc0693c050bf39824865d28
+NAME=firmware-imx-7.8
+MD5=0967aa59b3fd8d80fcb98146a9aac91b
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
 
@@ -32,23 +32,25 @@ clean:
 	dh $@
 
 override_dh_auto_install:
-	mkdir -p $(DESTDIR)/lib/firmware/ddr/synopsys
-	install -v -m644 $(NAME)/firmware/ddr/synopsys/*.bin $(DESTDIR)/lib/firmware/ddr/synopsys/
+	mkdir -p $(DESTDIR)/lib/firmware/imx/ddr/synopsys
+	install -v -m644 $(NAME)/firmware/ddr/synopsys/*.bin $(DESTDIR)/lib/firmware/imx/ddr/synopsys/
 
+	# linux searches at /lib/firmware/imx/epdc
 	mkdir -p $(DESTDIR)/lib/firmware/imx/epdc
 	install -v -m644 $(NAME)/firmware/epdc/*.fw $(DESTDIR)/lib/firmware/imx/epdc/
 	install -v -m644 $(NAME)/firmware/epdc/epdc_ED060XH2C1.fw.nonrestricted $(DESTDIR)/lib/firmware/imx/epdc/epdc_ED060XH2C1.fw
 
-	mkdir -p $(DESTDIR)/lib/firmware/hdmi/cadence
-	install -v -m644 $(NAME)/firmware/hdmi/cadence/*.bin $(DESTDIR)/lib/firmware/hdmi/cadence/
+	mkdir -p $(DESTDIR)/lib/firmware/imx/hdmi/cadence
+	install -v -m644 $(NAME)/firmware/hdmi/cadence/*.bin $(DESTDIR)/lib/firmware/imx/hdmi/cadence/
 
 	# linux searches at /lib/firmware/imx/sdma
 	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
 	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
 
-	mkdir -p $(DESTDIR)/lib/firmware/seco
-	install -v -m644 $(NAME)/firmware/seco/*.img $(DESTDIR)/lib/firmware/seco/
+	mkdir -p $(DESTDIR)/lib/firmware/imx/seco
+	install -v -m644 $(NAME)/firmware/seco/*.img $(DESTDIR)/lib/firmware/imx/seco/
 
 	# libvpu searches at /lib/firmware/vpu
+	# linux searches at /lib/firmware/vpu
 	mkdir -p $(DESTDIR)/lib/firmware/vpu
 	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/vpu/
