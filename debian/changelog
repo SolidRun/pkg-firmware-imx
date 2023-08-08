@@ -1,3 +1,9 @@
+firmware-imx (5.0+pkg2) UNRELEASED; urgency=medium
+
+  * remove imx6 sdma firmware, it is now part of kernel
+
+ -- Josua Mayer <josua@solid-run.com>  Sat, 14 Nov 2015 12:40:07 +0000
+
 firmware-imx (5.0+pkg1) stable; urgency=medium
 
   * install compatibility symlink to new vpu firmware location

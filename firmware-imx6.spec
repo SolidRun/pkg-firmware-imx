@@ -43,15 +43,12 @@ chmod +x %{SOURCE1}
 %{SOURCE1} --auto-accept --force
 
 %build
-# build imx6 sdma firmware
-objcopy -Iihex -Obinary sdma-imx6q.bin.ihex sdma-imx6q.bin
 
 %install
 mkdir -p %{buildroot}/lib/firmware/vpu
 mkdir -p %{buildroot}/lib/firmware/sdma
 install -v -m644 %{blobpkg_name}/firmware/vpu/*.bin %{buildroot}/lib/firmware/vpu/
 install -v -m644 %{blobpkg_name}/firmware/sdma/*.bin %{buildroot}/lib/firmware/sdma/
-install -v -m644 sdma-imx6q.bin %{buildroot}/lib/firmware/sdma/
 
 %files
 %defattr(-,root,root)

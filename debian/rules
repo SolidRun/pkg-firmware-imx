@@ -27,12 +27,8 @@ build:
 	chmod +x $(NAME).bin
 	./$(NAME).bin --auto-accept --force
 
-	# build imx6 sdma firmware
-	objcopy -Iihex -Obinary sdma-imx6q.bin.ihex sdma-imx6q.bin
-
 clean:
 	rm -rf $(NAME) $(NAME).bin
-	rm -f sdma-imx6q.bin
 	dh $@
 
 override_dh_auto_install:
@@ -40,4 +36,3 @@ override_dh_auto_install:
 	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
 	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/imx/vpu/
 	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
-	install -v -m644 sdma-imx6q.bin $(DESTDIR)/lib/firmware/imx/sdma/
