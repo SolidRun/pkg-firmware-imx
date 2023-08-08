@@ -90,7 +90,7 @@ checksum="${2}"
 
 #################################################################
 
-MIRRORS="http://www.freescale.com/lgfiles/NMG/MAD/YOCTO/ http://download.ossystems.com.br/bsp/freescale/source/"
+MIRRORS="http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/ http://download.ossystems.com.br/bsp/freescale/source/"
 fetch "${filename}" "${checksum}"
 chmod +x "${filename}"
 
