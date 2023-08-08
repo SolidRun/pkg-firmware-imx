@@ -21,12 +21,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-%define blobpkg_name firmware-imx-5.0
-%define blobpkg_md5 543210d17971f61c7c1829d2c160dc4e
+%define blobpkg_name firmware-imx-5.2
+%define blobpkg_md5 e466839e2cfbbcacb974b872c0b063e7
 %define blob_search_paths /home/abuild/rpmbuild/SOURCES ~
 
 Name: firmware-imx
-Version: 5.0
+Version: 5.2
 Release: 0
 License: MIT
 Group: System/Base
@@ -45,16 +45,18 @@ chmod +x %{SOURCE1}
 %build
 
 %install
-mkdir -p %{buildroot}/lib/firmware/vpu
-mkdir -p %{buildroot}/lib/firmware/sdma
-install -v -m644 %{blobpkg_name}/firmware/vpu/*.bin %{buildroot}/lib/firmware/vpu/
-install -v -m644 %{blobpkg_name}/firmware/sdma/*.bin %{buildroot}/lib/firmware/sdma/
+mkdir -p %{buildroot}/lib/firmware/imx/vpu
+mkdir -p %{buildroot}/lib/firmware/imx/sdma
+mkdir -p $(DESTDIR)/lib/firmware/imx/epdc
+install -v -m644 %{blobpkg_name}/firmware/vpu/*.bin %{buildroot}/lib/firmware/imx/vpu/
+install -v -m644 %{blobpkg_name}/firmware/sdma/*.bin %{buildroot}/lib/firmware/imx/sdma/
+install -v -m644 $(NAME)/firmware/epdc/*.fw %{buildroot}/lib/firmware/imx/epdc/
+install -v -m644 $(NAME)/firmware/epdc/epdc_ED060XH2C1.fw.nonrestricted %{buildroot}/lib/firmware/imx/epdc/epdc_ED060XH2C1.fw
 
 %files
 %defattr(-,root,root)
 %dir /lib/firmware
-/lib/firmware/vpu
-/lib/firmware/sdma
-%doc %{blobpkg_name}/licenses/vpu/EULA
+/lib/firmware/imx
+%doc %{blobpkg_name}/COPYING
 
 %changelog

@@ -12,10 +12,10 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-5.0
-MD5=543210d17971f61c7c1829d2c160dc4e
+NAME=firmware-imx-5.2
+MD5=e466839e2cfbbcacb974b872c0b063e7
 
-DESTDIR=$(CURDIR)/debian/tmp
+DESTDIR=$(CURDIR)/debian/firmware-imx
 
 %:
 	dh $@
@@ -34,5 +34,8 @@ clean:
 override_dh_auto_install:
 	mkdir -p $(DESTDIR)/lib/firmware/imx/vpu
 	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
+	mkdir -p $(DESTDIR)/lib/firmware/imx/epdc
 	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/imx/vpu/
 	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
+	install -v -m644 $(NAME)/firmware/epdc/*.fw $(DESTDIR)/lib/firmware/imx/epdc/
+	install -v -m644 $(NAME)/firmware/epdc/epdc_ED060XH2C1.fw.nonrestricted $(DESTDIR)/lib/firmware/imx/epdc/epdc_ED060XH2C1.fw
