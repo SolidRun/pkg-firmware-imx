@@ -1,7 +1,7 @@
 #
-# spec file for package firmware-imx6
+# spec file for package firmware-imx
 #
-# Copyright (c) 2014 Josua Mayer <josua@solid-run.com>
+# Copyright (c) 2014-2015 Josua Mayer <josua@solid-run.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,17 +25,17 @@
 %define blobpkg_md5 543210d17971f61c7c1829d2c160dc4e
 %define blob_search_paths /home/abuild/rpmbuild/SOURCES ~
 
-Name: firmware-imx6
+Name: firmware-imx
 Version: 5.0
 Release: 0
 License: MIT
 Group: System/Base
-Summary: Firmware blobs for i.MX6
+Summary: Firmware blobs for Freescale i.MX series
 Source: firmware-imx-%{version}.tar.gz
 Source1: %{blobpkg_name}.bin
 
 %description
-Provides VPU and SDMA firmware for i.MX6 CPUs
+Provides VPU and SDMA firmware for Freescale i.MX SoCs
 
 %prep
 %setup -q

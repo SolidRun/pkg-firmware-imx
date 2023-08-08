@@ -8,7 +8,10 @@ Homepage: <insert the upstream URL, if relevant>
 Vcs-Git: https://github.com/mxOBS/deb-pkg_firmware-imx.git
 Vcs-Browser: https://github.com/mxOBS/deb-pkg_firmware-imx
 
-Package: firmware-imx6
+Package: firmware-imx
 Architecture: armhf armel
+Provides: firmware-imx6
+Replaces: firmware-imx6
+Conflicts: firmware-imx6
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
