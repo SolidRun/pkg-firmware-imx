@@ -1,6 +1,6 @@
 firmware-imx (5.2+pkg2) stable; urgency=high
 
-  * re-add imx6 sdma firmware
+  * add imx6 sdma firmware version 3.3
 
  -- Josua Mayer <josua@solid-run.com>  Sun, 03 Sep 2017 14:10:06 +0200
 
