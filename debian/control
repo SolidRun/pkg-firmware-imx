@@ -1,5 +1,5 @@
 Source: firmware-imx
-Section: unknown
+Section: kernel
 Priority: extra
 Maintainer: Josua Mayer <josua@solid-run.com>
 Build-Depends: debhelper (>= 8.0.0)
@@ -13,5 +13,5 @@ Architecture: armhf armel
 Provides: firmware-imx6
 Replaces: firmware-imx6
 Conflicts: firmware-imx6
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: vendor firmware for i.MX6
+ Includes vendor provided firmware blobs for i.MX6 SoCs.
