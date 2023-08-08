@@ -47,6 +47,6 @@ License: MIT
 Files: firmware-imx-*/*
 Copyright: Freescale and others
 License: LA_OPT_FSL_OPEN_3RD_PARTY_IP
- v8 June 2015
+ v18 February 2017
  .
  See /usr/share/doc/firmware-imx6/COPYING.gz for the full text!
