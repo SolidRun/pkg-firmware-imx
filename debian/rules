@@ -16,6 +16,7 @@ NAME=firmware-imx-8.10
 SHA256=2b70f169d4065b2a7ac7a676afe24636128bd2dacc9f5230346758c3b146b2be
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
+DESTDIR_CONFLICTS=$(CURDIR)/debian/firmware-imx-conflicts
 
 %:
 	dh $@
@@ -46,6 +47,9 @@ override_dh_auto_install:
 	# linux searches at /lib/firmware/imx/sdma
 	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
 	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
+	mkdir -p $(DESTDIR_CONFLICTS)/lib/firmware/imx/sdma
+	mv $(DESTDIR)/lib/firmware/imx/sdma/sdma-imx6q.bin $(DESTDIR_CONFLICTS)/lib/firmware/imx/sdma/
+	mv $(DESTDIR)/lib/firmware/imx/sdma/sdma-imx7d.bin $(DESTDIR_CONFLICTS)/lib/firmware/imx/sdma/
 
 	# libvpu searches at /lib/firmware/vpu
 	# linux searches at /lib/firmware/vpu

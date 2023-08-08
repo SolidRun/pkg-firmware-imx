@@ -10,6 +10,13 @@ Vcs-Browser: https://github.com/mxOBS/deb-pkg_firmware-imx
 
 Package: firmware-imx
 Architecture: all
-Suggests: firmware-misc-nonfree (>= 20180518-1)
+Depends: firmware-misc-nonfree (>= 20180518-1) | firmware-imx-conflicts
 Description: vendor firmware for i.MX6
  Includes vendor provided firmware blobs for i.MX6 SoCs.
+
+Package: firmware-imx-conflicts
+Architecture: all
+Conflicts: firmware-misc-nonfree (>= 20180518-1)
+Description: vendor firmware conflicting with other packages
+ Includes those vendor-provided firmware blobs that conflict
+ with blobs provided by other packages from the Debian project.

@@ -1,5 +1,6 @@
 firmware-imx (8.10) UNRELEASED; urgency=medium
 
+  * split conflicting files into separate package
   * use sha256 checksum
   * NXP release 8.10
 
