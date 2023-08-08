@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# hack: will only work on OBS-created chroots
+SOURCESDIR=/usr/src/packages/SOURCES/
+
+NAME=firmware-imx-3.10.17-1.0.0
+MD5=29a54f6e5bf889a00cd8ca85080af223
+
+DESTDIR=$(CURDIR)/debian/tmp
+
+%:
+	dh $@
+
+build:
+	# fetch binaries
+	find $(SOURCESDIR) -maxdepth 1 -iname "$(NAME).bin" -exec cp -v {} ./ \; || true
+	./fetch.sh $(NAME).bin $(MD5)
+	chmod +x $(NAME).bin
+	./$(NAME).bin --auto-accept --force
+
+	# build imx6 sdma firmware
+	objcopy -Iihex -Obinary sdma-imx6q.bin.ihex sdma-imx6q.bin
+
+clean:
+	rm -rf $(NAME) $(NAME).bin
+	rm -f sdma-imx6q.bin
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p $(DESTDIR)/lib/firmware/vpu
+	mkdir -p $(DESTDIR)/lib/firmware/sdma
+	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/vpu/
+	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/sdma/
+	install -v -m644 sdma-imx6q.bin $(DESTDIR)/lib/firmware/sdma/
