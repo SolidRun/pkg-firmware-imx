@@ -12,7 +12,7 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-8.8
+NAME=firmware-imx-8.10
 MD5=eabb27d28bba375a9f14d6306c07af5f
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
