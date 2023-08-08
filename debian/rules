@@ -10,10 +10,10 @@
 #export DH_VERBOSE=1
 
 # hack: will only work on OBS-created chroots
-SOURCESDIR=/usr/src/packages/SOURCES/
+SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-3.10.17-1.0.0
-MD5=29a54f6e5bf889a00cd8ca85080af223
+NAME=firmware-imx-3.14.28-1.0.0
+MD5=6e700f3d3a6482db08d5aabee7751630
 
 DESTDIR=$(CURDIR)/debian/tmp
 
@@ -22,7 +22,7 @@ DESTDIR=$(CURDIR)/debian/tmp
 
 build:
 	# fetch binaries
-	find $(SOURCESDIR) -maxdepth 1 -iname "$(NAME).bin" -exec cp -v {} ./ \; || true
+	find $(SOURCESDIR) -maxdepth 1 -iname "$(NAME).bin" -exec cp -v {} ./ \; -quit || true
 	./fetch.sh $(NAME).bin $(MD5)
 	chmod +x $(NAME).bin
 	./$(NAME).bin --auto-accept --force

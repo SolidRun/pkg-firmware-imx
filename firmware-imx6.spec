@@ -21,12 +21,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-%define blobpkg_name firmware-imx-3.10.17-1.0.0
-%define blobpkg_md5 29a54f6e5bf889a00cd8ca85080af223
+%define blobpkg_name firmware-imx-3.14.28-1.0.0
+%define blobpkg_md5 6e700f3d3a6482db08d5aabee7751630
 %define blob_search_paths /home/abuild/rpmbuild/SOURCES ~
 
 Name: firmware-imx6
-Version: 1
+Version: 2
 Release: 1
 License: MIT
 Group: System/Base
