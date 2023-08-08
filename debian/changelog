@@ -1,3 +1,9 @@
+firmware-imx (5.0+pkg1) stable; urgency=medium
+
+  * install compatibility symlink to new vpu firmware location
+
+ -- Josua Mayer <josua@solid-run.com>  Thu, 20 Aug 2015 23:23:29 +0800
+
 firmware-imx (5.0) stable; urgency=medium
 
   * Freescale update
