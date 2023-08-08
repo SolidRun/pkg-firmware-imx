@@ -13,7 +13,7 @@
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
 NAME=firmware-imx-8.10
-MD5=eabb27d28bba375a9f14d6306c07af5f
+SHA256=2b70f169d4065b2a7ac7a676afe24636128bd2dacc9f5230346758c3b146b2be
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
 
@@ -23,7 +23,7 @@ DESTDIR=$(CURDIR)/debian/firmware-imx
 build:
 	# fetch binaries
 	find $(SOURCESDIR) -maxdepth 1 -iname "$(NAME).bin" -exec cp -v {} ./ \; -quit || true
-	./fetch.sh $(NAME).bin $(MD5)
+	./fetch.sh $(NAME).bin $(SHA256)
 	chmod +x $(NAME).bin
 	./$(NAME).bin --auto-accept --force
 

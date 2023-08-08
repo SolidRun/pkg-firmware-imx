@@ -1,5 +1,6 @@
-firmware-imx (8.10) stable; urgency=medium
+firmware-imx (8.10) UNRELEASED; urgency=medium
 
+  * use sha256 checksum
   * NXP release 8.10
 
  -- Josua Mayer <josua@solid-run.com>  Thu, 22 Apr 2021 13:33:14 +0200

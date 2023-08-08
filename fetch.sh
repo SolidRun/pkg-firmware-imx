@@ -10,11 +10,11 @@ fetch() {
 	t=0
 	chksum $name $chksum || t=$?
 	if [ "x$t" = "x0" ]; then
-		echo "$name exists already and MD5 matches. Keeping the file."
+		echo "$name exists already and SHA256 matches. Keeping the file."
 		return 0
 	else
 		if [ "x$t" = "x2" ]; then
-			echo "$name exists already but MD5 does not match. Deleting the file."
+			echo "$name exists already but SHA256 does not match. Deleting the file."
 			rm -v $name
 		fi
 			# else t=1 >> file doesn't exist yet
@@ -44,12 +44,12 @@ fetch() {
 		return 1
 	fi
 
-	# check MD5 again
+	# check SHA256 again
 	t=0
 	chksum $name $chksum || t=$?
 
 	if [ "x$t" != "x0" ]; then
-		echo "MD5 of downloaded file does not match! Keeping it anyway."
+		echo "SHA256 of downloaded file does not match! Keeping it anyway."
 		return 1
 	fi
 
@@ -64,7 +64,7 @@ chksum() {
 		return 1
 	fi
 
-	mysum=`md5sum $file | cut -d ' ' -f 1`
+	mysum=`sha256sum $file | cut -d ' ' -f 1`
 	if [ "$mysum" = "$chksum" ]; then
 		return 0
 	else
