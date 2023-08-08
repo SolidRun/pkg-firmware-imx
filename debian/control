@@ -10,8 +10,6 @@ Vcs-Browser: https://github.com/mxOBS/deb-pkg_firmware-imx
 
 Package: firmware-imx
 Architecture: armhf armel
-Provides: firmware-imx6
-Replaces: firmware-imx6
-Conflicts: firmware-imx6, firmware-misc-nonfree (>= 20180518-1)
+Conflicts: firmware-misc-nonfree (>= 20180518-1)
 Description: vendor firmware for i.MX6
  Includes vendor provided firmware blobs for i.MX6 SoCs.
