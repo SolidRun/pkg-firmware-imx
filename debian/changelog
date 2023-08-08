@@ -1,3 +1,9 @@
+firmware-imx (5.2+pkg2) stable; urgency=high
+
+  * re-add imx6 sdma firmware
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 03 Sep 2017 14:10:06 +0200
+
 firmware-imx (5.2+pkg1) stable; urgency=medium
 
   * remove imx6 sdma firmware, it is now part of kernel
