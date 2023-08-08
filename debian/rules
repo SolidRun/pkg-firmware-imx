@@ -36,8 +36,8 @@ clean:
 	dh $@
 
 override_dh_auto_install:
-	mkdir -p $(DESTDIR)/lib/firmware/vpu
-	mkdir -p $(DESTDIR)/lib/firmware/sdma
-	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/vpu/
-	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/sdma/
-	install -v -m644 sdma-imx6q.bin $(DESTDIR)/lib/firmware/sdma/
+	mkdir -p $(DESTDIR)/lib/firmware/imx/vpu
+	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
+	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/imx/vpu/
+	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
+	install -v -m644 sdma-imx6q.bin $(DESTDIR)/lib/firmware/imx/sdma/
