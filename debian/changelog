@@ -1,4 +1,10 @@
-firmware-imx (6.0) UNRELEASED; urgency=medium
+firmware-imx (6.0+1) stable; urgency=medium
+
+  * formally declare conflict with firmware-misc-nonfree for sdma
+
+ -- Josua Mayer <josua@solid-run.com>  Sun, 16 Sep 2018 16:07:36 +0200
+
+firmware-imx (6.0) stable; urgency=medium
 
   * Freescale release 6.0
 
