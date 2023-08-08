@@ -1,10 +1,10 @@
-firmware-imx (8.10) UNRELEASED; urgency=medium
+firmware-imx (8.10) stable; urgency=medium
 
   * split conflicting files into separate package
   * use sha256 checksum
   * NXP release 8.10
 
- -- Josua Mayer <josua@solid-run.com>  Thu, 22 Apr 2021 13:33:14 +0200
+ -- Josua Mayer <josua@solid-run.com>  Thu, 22 Apr 2021 13:58:45 +0200
 
 firmware-imx (8.8) stable; urgency=medium
 
