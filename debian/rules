@@ -12,8 +12,8 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-8.10
-SHA256=2b70f169d4065b2a7ac7a676afe24636128bd2dacc9f5230346758c3b146b2be
+NAME=firmware-imx-8.20
+SHA256=f6dc6a5c8fd9b913a15360d3ccd53d188db05a08a8594c518e57622478c72383
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
 DESTDIR_CONFLICTS=$(CURDIR)/debian/firmware-imx-conflicts
@@ -36,6 +36,9 @@ override_dh_auto_install:
 	mkdir -p $(DESTDIR)/lib/firmware/imx/ddr/synopsys
 	install -v -m644 $(NAME)/firmware/ddr/synopsys/*.bin $(DESTDIR)/lib/firmware/imx/ddr/synopsys/
 
+	mkdir -p $(DESTDIR)/lib/firmware/easrc
+	install -v -m644 $(NAME)/firmware/easrc/*.bin $(DESTDIR)/lib/firmware/easrc/
+
 	# linux searches at /lib/firmware/imx/epdc
 	mkdir -p $(DESTDIR)/lib/firmware/imx/epdc
 	install -v -m644 $(NAME)/firmware/epdc/*.fw $(DESTDIR)/lib/firmware/imx/epdc/
@@ -55,3 +58,9 @@ override_dh_auto_install:
 	# linux searches at /lib/firmware/vpu
 	mkdir -p $(DESTDIR)/lib/firmware/vpu
 	install -v -m644 $(NAME)/firmware/vpu/*.bin $(DESTDIR)/lib/firmware/vpu/
+
+	mkdir -p $(DESTDIR)/lib/firmware/xcvr
+	install -v -m644 $(NAME)/firmware/xcvr/*.bin $(DESTDIR)/lib/firmware/xcvr/
+
+	mkdir -p $(DESTDIR)/lib/firmware/xuvi
+	install -v -m644 $(NAME)/firmware/xuvi/*.bin $(DESTDIR)/lib/firmware/xuvi/

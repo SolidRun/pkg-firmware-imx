@@ -1,3 +1,9 @@
+firmware-imx (8.20) stable; urgency=medium
+
+  * NXP release 8.20
+
+ -- Josua Mayer <josua@solid-run.com>  Tue, 08 Aug 2023 14:19:00 +0300
+
 firmware-imx (8.10) stable; urgency=medium
 
   * split conflicting files into separate package
