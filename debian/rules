@@ -12,8 +12,8 @@
 # hack: will only work on OBS-created chroots
 SOURCESDIR=/usr/src/packages/SOURCES/ ~
 
-NAME=firmware-imx-7.8
-MD5=0967aa59b3fd8d80fcb98146a9aac91b
+NAME=firmware-imx-8.8
+MD5=eabb27d28bba375a9f14d6306c07af5f
 
 DESTDIR=$(CURDIR)/debian/firmware-imx
 
@@ -46,9 +46,6 @@ override_dh_auto_install:
 	# linux searches at /lib/firmware/imx/sdma
 	mkdir -p $(DESTDIR)/lib/firmware/imx/sdma
 	install -v -m644 $(NAME)/firmware/sdma/*.bin $(DESTDIR)/lib/firmware/imx/sdma/
-
-	mkdir -p $(DESTDIR)/lib/firmware/imx/seco
-	install -v -m644 $(NAME)/firmware/seco/*.img $(DESTDIR)/lib/firmware/imx/seco/
 
 	# libvpu searches at /lib/firmware/vpu
 	# linux searches at /lib/firmware/vpu

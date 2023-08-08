@@ -1,3 +1,9 @@
+firmware-imx (8.8) stable; urgency=medium
+
+  * NXP release 8.8
+
+ -- Josua Mayer <josua@solid-run.com>  Mon, 19 Oct 2020 16:43:05 +0200
+
 firmware-imx (7.8) stable; urgency=medium
 
   * NXP release 7.8
